@@ -8,9 +8,12 @@ class UserList extends StatelessWidget {
     final users = {...DUMMY_USERS};
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Lista de Usuários'),
-      ),
+      appBar: AppBar(title: Text('Lista de Usuários'), actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.add),
+          onPressed: () {},
+        )
+      ]),
       body: ListView.builder(
         itemCount: users.length,
         itemBuilder: (context, index) =>
