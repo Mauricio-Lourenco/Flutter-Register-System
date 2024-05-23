@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_crud/provider/users.dart';
+import 'package:flutter_crud/routes/app_routes.dart';
+import 'package:flutter_crud/views/user_form.dart';
 import 'package:flutter_crud/views/user_list.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (context) => Users(),
-        )
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -24,6 +26,10 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: UserList(),
+        routes: {
+          AppRoutes.HOME: (_) => UserList(),
+          AppRoutes.USER_FORM: (_) => UserForm()
+        },
       ),
     );
   }
