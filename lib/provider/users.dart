@@ -58,4 +58,6 @@ class Users with ChangeNotifier {
       notifyListeners();
     }
   }
+
+  void remove(User user) {}
 }
